@@ -27,14 +27,22 @@
         .checkbox-label { display:flex; align-items:center; gap:10px; font-weight:bold; cursor:pointer; }
         button { background:#ff4da6; color:white; border:none; padding:15px; border-radius:10px; cursor:pointer; font-size:18px; font-weight:bold; transition: background 0.3s; margin-top:10px; }
         button:hover{ background:#ff1a8c; }
-        .spots { background:#fff0b3; padding:20px; border-radius:15px; text-align:center; font-size:24px; font-weight:bold; color:#cc7a00; }
         .deposit-info { background:#e6f9ff; border-left:5px solid #00aacc; padding:20px; border-radius:0 10px 10px 0; }
         .deposit-info p { margin-bottom:8px; }
         .contact-card a { color:#ff4da6; text-decoration:none; font-weight:bold; }
         .contact-card a:hover { text-decoration:underline; }
         footer { background:#ff4da6; color:white; text-align:center; padding:30px; margin-top:20px; }
         footer p { margin-bottom:5px; }
-        @media(max-width:768px){ .title h1 { font-size:1.8rem; } }
+        .availability-table { width:100%; border-collapse:collapse; margin-top:20px; }
+        .availability-table th, .availability-table td { padding:15px; text-align:left; border:2px solid #ff4da6; }
+        .availability-table th { background:#ff4da6; color:white; font-weight:bold; }
+        .availability-table tr:nth-child(even) { background:#fff5f8; }
+        .available { background:#90EE90; font-weight:bold; }
+        .closed { background:#FFB6C6; font-weight:bold; color:#cc0000; }
+        .warning-box { background:#ffe6e6; border:3px solid #ff4da6; padding:20px; border-radius:15px; margin:20px 0; }
+        .warning-box h3 { color:#ff4da6; margin-bottom:10px; }
+        .warning-box p { color:#cc0000; font-weight:bold; font-size:1.1rem; margin:5px 0; }
+        @media(max-width:768px){ .title h1 { font-size:1.8rem; } .availability-table { font-size:0.9rem; } }
     </style>
 </head>
 <body>
@@ -90,8 +98,72 @@
             <p><strong>🎁 5 Pins = FREE Gift</strong></p>
         </div>
 
-        <div class="card spots">
-            ⭐ 3 Spots Per Day
+        <div class="card">
+            <h2>📅 Availability & Booking</h2>
+            
+            <div class="warning-box">
+                <h3>⚠️ CLOSED TIMES - Please Note!</h3>
+                <p>❌ June 21: CLOSED 7:00 AM - 3:00 PM</p>
+                <p>❌ June 19: CLOSED 4:00 PM - 9:00 PM</p>
+                <p><em>Bookings are NOT available during these times.</em></p>
+            </div>
+
+            <table class="availability-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Available Times</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>June 19</td>
+                        <td>6:00 AM - 3:59 PM</td>
+                        <td class="available">✅ AVAILABLE</td>
+                    </tr>
+                    <tr>
+                        <td>June 19</td>
+                        <td>4:00 PM - 9:00 PM</td>
+                        <td class="closed">❌ CLOSED</td>
+                    </tr>
+                    <tr>
+                        <td>June 20</td>
+                        <td>6:00 AM - 9:00 PM</td>
+                        <td class="available">✅ AVAILABLE</td>
+                    </tr>
+                    <tr>
+                        <td>June 21</td>
+                        <td>7:00 AM - 3:00 PM</td>
+                        <td class="closed">❌ CLOSED</td>
+                    </tr>
+                    <tr>
+                        <td>June 21</td>
+                        <td>3:01 PM - 9:00 PM</td>
+                        <td class="available">✅ AVAILABLE</td>
+                    </tr>
+                    <tr>
+                        <td>June 22</td>
+                        <td>6:00 AM - 9:00 PM</td>
+                        <td class="available">✅ AVAILABLE</td>
+                    </tr>
+                    <tr>
+                        <td>June 23</td>
+                        <td>6:00 AM - 9:00 PM</td>
+                        <td class="available">✅ AVAILABLE</td>
+                    </tr>
+                    <tr>
+                        <td>June 24</td>
+                        <td>6:00 AM - 9:00 PM</td>
+                        <td class="available">✅ AVAILABLE</td>
+                    </tr>
+                    <tr>
+                        <td>June 25</td>
+                        <td>6:00 AM - 9:00 PM</td>
+                        <td class="available">✅ AVAILABLE</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <div class="card">
@@ -107,7 +179,7 @@
                 <textarea name="Allergies_Special_Instructions" placeholder="Allergies or Special Instructions"></textarea>
                 
                 <div class="form-group">
-                    <label for="booking-date"><strong>Select Date</strong></label>
+                    <label for="booking-date"><strong>Select Date (Check Availability Above)</strong></label>
                     <input type="date" name="Booking_Date" id="booking-date" required>
                 </div>
                 
