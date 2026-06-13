@@ -6,13 +6,15 @@
     <title>Little Stars Big Brains Childcare | Rochester, NY</title>
     <style>
         * { margin:0; padding:0; box-sizing:border-box; }
+        html, body { height: 100%; width: 100%; }
         body { 
             font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-            background: linear-gradient(135deg, #ffd6f5 0%, #fff5cc 25%, #d6f5ff 50%, #ffe6f2 75%, #fff5cc 100%);
+            background: linear-gradient(-45deg, #ff69b4, #ffd700, #87ceeb, #ffe6f2);
             background-size: 400% 400%;
             animation: glitter 15s ease infinite;
             color:#333; 
             line-height:1.6;
+            min-height: 100vh;
         }
         @keyframes glitter {
             0% { background-position: 0% 50%; }
@@ -20,8 +22,8 @@
             100% { background-position: 0% 50%; }
         }
         @keyframes sparkle {
-            0%, 100% { opacity: 0.3; }
-            50% { opacity: 1; }
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.2); }
         }
         header { text-align:center; background:#fff; position: relative; }
         .sparkles {
@@ -34,11 +36,12 @@
         }
         .sparkle {
             position: absolute;
-            width: 8px;
-            height: 8px;
-            background: gold;
+            width: 10px;
+            height: 10px;
+            background: radial-gradient(circle, #ffd700, #ffed4e);
             border-radius: 50%;
             animation: sparkle 2s infinite;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
         }
         .hero img { width:100%; max-width:800px; display:block; margin:0 auto; border-bottom:5px solid gold; }
         .logo-section { text-align:center; padding:20px; background:linear-gradient(135deg, #ff69b4, #ffd700, #87ceeb); position: relative; }
@@ -50,9 +53,9 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 50%, rgba(255,255,255,0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.3) 0%, transparent 50%),
-                radial-gradient(circle at 40% 20%, rgba(255,255,255,0.2) 0%, transparent 50%);
+                radial-gradient(circle at 20% 50%, rgba(255,255,255,0.4) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.4) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(255,255,255,0.3) 0%, transparent 50%);
             pointer-events: none;
         }
         .logo-section img { width:100%; max-width:400px; display:block; margin:0 auto; border-radius:20px; position: relative; z-index: 1; filter: drop-shadow(0 0 20px rgba(255,215,0,0.5)); }
@@ -173,7 +176,7 @@
                     </tr>
                     <tr>
                         <td>June 19</td>
-                        <td>4:00 PM - 9:00 PM</td>
+                        <td>4:00 PM - 11:00 PM</td>
                         <td class="closed">❌ CLOSED</td>
                     </tr>
                     <tr>
@@ -287,7 +290,7 @@
 
         // Create sparkle effect on header
         const sparklesContainer = document.getElementById('sparkles-container');
-        for (let i = 0; i < 20; i++) {
+        for (let i = 0; i < 30; i++) {
             const sparkle = document.createElement('div');
             sparkle.className = 'sparkle';
             sparkle.style.left = Math.random() * 100 + '%';
