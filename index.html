@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Little Stars Big Brains Childcare | Rochester, NY</title>
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:linear-gradient(to bottom,#ffd6f5,#fff5cc,#d6f5ff); color:#333; line-height:1.6; }
+        header { text-align:center; background:#fff; }
+        .hero img { width:100%; max-width:800px; display:block; margin:0 auto; border-bottom:5px solid gold; }
+        .title { padding:30px; text-align:center; }
+        .title h1 { color:#ff4da6; font-size:2.5rem; margin-bottom:10px; }
+        .title p { font-size:1.2rem; }
+        .title .location { font-weight:bold; color:#0088cc; display:inline-block; margin-top:5px; }
+        section { max-width:1000px; margin:auto; padding:40px 20px; }
+        .card { background:white; padding:30px; border-radius:20px; margin-bottom:25px; box-shadow:0 5px 15px rgba(0,0,0,.08); }
+        h2 { color:#ff4da6; margin-bottom:15px; border-bottom:2px solid #ffe6f2; padding-bottom:10px; }
+        .card ul, .card ol { margin-top:15px; padding-left:20px; }
+        .card li { margin-bottom:8px; font-size:1.05rem; }
+        .booking-form { display:grid; gap:15px; margin-top:20px; }
+        .booking-form input, .booking-form textarea, .booking-form select { padding:14px; border-radius:10px; border:1px solid #ccc; font-size:1rem; width:100%; }
+        .booking-form textarea { resize:vertical; min-height:100px; }
+        .form-group { display:flex; flex-direction:column; gap:5px; }
+        .checkbox-label { display:flex; align-items:center; gap:10px; font-weight:bold; cursor:pointer; }
+        button { background:#ff4da6; color:white; border:none; padding:15px; border-radius:10px; cursor:pointer; font-size:18px; font-weight:bold; transition: background 0.3s; margin-top:10px; }
+        button:hover{ background:#ff1a8c; }
+        .spots { background:#fff0b3; padding:20px; border-radius:15px; text-align:center; font-size:24px; font-weight:bold; color:#cc7a00; }
+        .deposit-info { background:#e6f9ff; border-left:5px solid #00aacc; padding:20px; border-radius:0 10px 10px 0; }
+        .deposit-info p { margin-bottom:8px; }
+        .contact-card a { color:#ff4da6; text-decoration:none; font-weight:bold; }
+        .contact-card a:hover { text-decoration:underline; }
+        footer { background:#ff4da6; color:white; text-align:center; padding:30px; margin-top:20px; }
+        footer p { margin-bottom:5px; }
+        @media(max-width:768px){ .title h1 { font-size:1.8rem; } }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <!-- Replace placeholder.jpg with your actual image filename -->
+        <img src="flyerrr.png" alt="Little Stars Big Brains Childcare Flyer">
+    </header>
+
+    <div class="title">
+        <h1>🌟 Little Stars Big Brains Childcare 🌟</h1>
+        <p>Where Little Minds Learn, Play, Grow & Shine! 💖</p>
+        <p class="location">📍 Rochester, NY</p>
+    </div>
+
+    <section>
+        <div class="card">
+            <h2>💕 Meet Nevaeh</h2>
+            <p>Hi everyone! My name is Nevaeh, but you can call me Vaehh! I'm 18 years old and previously worked as a Teacher Assistant. Caring for children has been a huge part of my life for as long as I can remember.</p>
+            <br>
+            <p>I truly believe every child deserves to feel safe, loved, encouraged, and important. My goal is to create a home-away-from-home where children can learn, play, build confidence, and make happy memories.</p>
+            <ul>
+                <li>🎨 Drawing & Painting</li>
+                <li>💃 Dancing & Having Fun</li>
+                <li>🌳 Nature Lover</li>
+                <li>🐾 Animal Lover</li>
+                <li>☀️ Making People Smile</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>🌈 Why Families Choose Us</h2>
+            <ul>
+                <li>🍼 Safe Home-Based Childcare</li>
+                <li>💕 Personalized Care</li>
+                <li>👶 Infant & Toddler Care</li>
+                <li>📚 Learning Activities</li>
+                <li>🎨 Arts & Crafts</li>
+                <li>💃 Dance Parties</li>
+                <li>☀️ Outdoor Play</li>
+                <li>🐶 Puppy Play</li>
+                <li>🍽️ Meals Provided</li>
+                <li>📸 Live Updates</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>⭐ Reward Pin Program</h2>
+            <p>Earn pins for kindness, helping others, participation, positive behavior, and milestones.</p>
+            <p><strong>🎁 5 Pins = FREE Gift</strong></p>
+        </div>
+
+        <div class="card spots">
+            ⭐ Available Spots: 3
+        </div>
+
+        <div class="card">
+            <h2>📝 Book Childcare</h2>
+            <form class="booking-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <input type="text" name="Parent_Name" placeholder="Parent Name" required>
+                <input type="tel" name="Phone_Number" placeholder="Phone Number" required>
+                <input type="email" name="Email_Address" placeholder="Email Address" required>
+                <input type="text" name="Emergency_Contact" placeholder="Emergency Contact">
+                <input type="text" name="Child_Name" placeholder="Child Name">
+                <input type="number" name="Number_of_Children" min="1" max="3" placeholder="Number of Children">
+                <input type="text" name="Child_Age" placeholder="Child Age(s)">
+                <textarea name="Allergies_Special_Instructions" placeholder="Allergies or Special Instructions"></textarea>
+                
+                <div class="form-group">
+                    <label for="booking-date"><strong>Select Date</strong></label>
+                    <input type="date" name="Booking_Date" id="booking-date" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dropoff-time"><strong>Drop Off Time</strong></label>
+                    <input type="time" name="Drop_Off_Time" id="dropoff-time" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="pickup-time"><strong>Pick Up Time</strong></label>
+                    <input type="time" name="Pick_Up_Time" id="pickup-time" required>
+                </div>
+
+                <label class="checkbox-label">
+                    <input type="checkbox" name="Overnight_Booking" value="Yes"> 
+                    Overnight Booking (+$10)
+                </label>
+
+                <select name="Deposit_Method" required>
+                    <option value="" disabled selected>Select Deposit Method</option>
+                    <option value="Cash App">Cash App</option>
+                    <option value="Chime">Chime</option>
+                </select>
+
+                <button type="submit">Submit Booking Request</button>
+            </form>
+        </div>
+
+        <div class="card deposit-info">
+            <h2>💳 Reservation Deposit</h2>
+            <p><strong>$25 Deposit Required</strong></p>
+            <p>💲 Cash App: <strong>$Littlestarsbigbrains</strong></p>
+            <p>💚 Chime: <strong>$vaehvaeh18</strong></p>
+            <p><em>Bookings are not guaranteed until the deposit is received.</em></p>
+        </div>
+
+        <div class="card contact-card">
+            <h2>📘 Contact</h2>
+            <p>Facebook: <a href="#" target="_blank">Nevaeh Stars</a></p>
+            <p>Email: <a href="mailto:Littlestarsbigbrains@gmail.com">Littlestarsbigbrains@gmail.com</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>💖 Little Stars Big Brains Childcare 💖</p>
+        <p>Where Little Minds Learn, Play, Grow & Shine!</p>
+        <p>Rochester, NY</p>
+    </footer>
+
+</body>
+</html>
