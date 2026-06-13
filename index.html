@@ -6,40 +6,85 @@
     <title>Little Stars Big Brains Childcare | Rochester, NY</title>
     <style>
         * { margin:0; padding:0; box-sizing:border-box; }
-        body { font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:linear-gradient(to bottom,#ffd6f5,#fff5cc,#d6f5ff); color:#333; line-height:1.6; }
-        header { text-align:center; background:#fff; }
+        body { 
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: linear-gradient(135deg, #ffd6f5 0%, #fff5cc 25%, #d6f5ff 50%, #ffe6f2 75%, #fff5cc 100%);
+            background-size: 400% 400%;
+            animation: glitter 15s ease infinite;
+            color:#333; 
+            line-height:1.6;
+        }
+        @keyframes glitter {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+        header { text-align:center; background:#fff; position: relative; }
+        .sparkles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            top: 0;
+            left: 0;
+        }
+        .sparkle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: gold;
+            border-radius: 50%;
+            animation: sparkle 2s infinite;
+        }
         .hero img { width:100%; max-width:800px; display:block; margin:0 auto; border-bottom:5px solid gold; }
-        .logo-section { text-align:center; padding:20px; background:linear-gradient(135deg, #ff69b4, #ffd700, #87ceeb); }
-        .logo-section img { width:100%; max-width:400px; display:block; margin:0 auto; border-radius:20px; }
-        .title { padding:30px; text-align:center; }
-        .title h1 { color:#ff4da6; font-size:2.5rem; margin-bottom:10px; }
+        .logo-section { text-align:center; padding:20px; background:linear-gradient(135deg, #ff69b4, #ffd700, #87ceeb); position: relative; }
+        .logo-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255,255,255,0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(255,255,255,0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        .logo-section img { width:100%; max-width:400px; display:block; margin:0 auto; border-radius:20px; position: relative; z-index: 1; filter: drop-shadow(0 0 20px rgba(255,215,0,0.5)); }
+        .title { padding:30px; text-align:center; position: relative; }
+        .title h1 { color:#ff4da6; font-size:2.5rem; margin-bottom:10px; text-shadow: 0 0 10px rgba(255,215,0,0.3); }
         .title p { font-size:1.2rem; }
         .title .location { font-weight:bold; color:#0088cc; display:inline-block; margin-top:5px; }
         section { max-width:1000px; margin:auto; padding:40px 20px; }
-        .card { background:white; padding:30px; border-radius:20px; margin-bottom:25px; box-shadow:0 5px 15px rgba(0,0,0,.08); }
+        .card { background:white; padding:30px; border-radius:20px; margin-bottom:25px; box-shadow:0 5px 15px rgba(0,0,0,.08), 0 0 20px rgba(255,215,0,0.2); border: 2px solid rgba(255,215,0,0.3); }
         h2 { color:#ff4da6; margin-bottom:15px; border-bottom:2px solid #ffe6f2; padding-bottom:10px; }
         .card ul, .card ol { margin-top:15px; padding-left:20px; }
         .card li { margin-bottom:8px; font-size:1.05rem; }
         .booking-form { display:grid; gap:15px; margin-top:20px; }
-        .booking-form input, .booking-form textarea, .booking-form select { padding:14px; border-radius:10px; border:1px solid #ccc; font-size:1rem; width:100%; }
+        .booking-form input, .booking-form textarea, .booking-form select { padding:14px; border-radius:10px; border:2px solid #ff4da6; font-size:1rem; width:100%; background:#fff9fc; }
         .booking-form textarea { resize:vertical; min-height:100px; }
         .form-group { display:flex; flex-direction:column; gap:5px; }
         .checkbox-label { display:flex; align-items:center; gap:10px; font-weight:bold; cursor:pointer; }
-        button { background:#ff4da6; color:white; border:none; padding:15px; border-radius:10px; cursor:pointer; font-size:18px; font-weight:bold; transition: background 0.3s; margin-top:10px; }
-        button:hover{ background:#ff1a8c; }
-        .deposit-info { background:#e6f9ff; border-left:5px solid #00aacc; padding:20px; border-radius:0 10px 10px 0; }
+        button { background:linear-gradient(135deg, #ff4da6, #ff1a8c); color:white; border:none; padding:15px; border-radius:10px; cursor:pointer; font-size:18px; font-weight:bold; transition: all 0.3s; margin-top:10px; box-shadow: 0 4px 15px rgba(255,77,166,0.3); }
+        button:hover{ transform: scale(1.05); box-shadow: 0 6px 20px rgba(255,77,166,0.5); }
+        .deposit-info { background:linear-gradient(135deg, #e6f9ff, #fff5f8); border-left:5px solid #00aacc; padding:20px; border-radius:0 10px 10px 0; border: 2px solid rgba(0,170,204,0.2); }
         .deposit-info p { margin-bottom:8px; }
         .contact-card a { color:#ff4da6; text-decoration:none; font-weight:bold; }
         .contact-card a:hover { text-decoration:underline; }
-        footer { background:#ff4da6; color:white; text-align:center; padding:30px; margin-top:20px; }
+        footer { background:linear-gradient(135deg, #ff4da6, #ff1a8c); color:white; text-align:center; padding:30px; margin-top:20px; }
         footer p { margin-bottom:5px; }
         .availability-table { width:100%; border-collapse:collapse; margin-top:20px; }
         .availability-table th, .availability-table td { padding:15px; text-align:left; border:2px solid #ff4da6; }
-        .availability-table th { background:#ff4da6; color:white; font-weight:bold; }
+        .availability-table th { background:linear-gradient(135deg, #ff4da6, #ff1a8c); color:white; font-weight:bold; }
         .availability-table tr:nth-child(even) { background:#fff5f8; }
         .available { background:#90EE90; font-weight:bold; }
         .closed { background:#FFB6C6; font-weight:bold; color:#cc0000; }
-        .warning-box { background:#ffe6e6; border:3px solid #ff4da6; padding:20px; border-radius:15px; margin:20px 0; }
+        .warning-box { background:linear-gradient(135deg, #ffe6e6, #ffcccc); border:3px solid #ff4da6; padding:20px; border-radius:15px; margin:20px 0; box-shadow: 0 0 15px rgba(255,77,166,0.2); }
         .warning-box h3 { color:#ff4da6; margin-bottom:10px; }
         .warning-box p { color:#cc0000; font-weight:bold; font-size:1.1rem; margin:5px 0; }
         @media(max-width:768px){ .title h1 { font-size:1.8rem; } .availability-table { font-size:0.9rem; } }
@@ -48,6 +93,7 @@
 <body>
 
     <header class="hero">
+        <div class="sparkles" id="sparkles-container"></div>
         <img src="https://raw.githubusercontent.com/littlestarsbigbrains-rgb/Littlestars/main/flyer.png" alt="Little Stars Big Brains Childcare Flyer">
     </header>
 
@@ -168,7 +214,7 @@
 
         <div class="card">
             <h2>📝 Book Childcare</h2>
-            <form class="booking-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <form class="booking-form" action="https://formspree.io/f/xovvaqwy" method="POST">
                 <input type="text" name="Parent_Name" placeholder="Parent Name" required>
                 <input type="tel" name="Phone_Number" placeholder="Phone Number" required>
                 <input type="email" name="Email_Address" placeholder="Email Address" required>
@@ -228,6 +274,19 @@
         <p>Where Little Minds Learn, Play, Grow & Shine!</p>
         <p>Rochester, NY</p>
     </footer>
+
+    <script>
+        // Create sparkle effect on header
+        const sparklesContainer = document.getElementById('sparkles-container');
+        for (let i = 0; i < 20; i++) {
+            const sparkle = document.createElement('div');
+            sparkle.className = 'sparkle';
+            sparkle.style.left = Math.random() * 100 + '%';
+            sparkle.style.top = Math.random() * 100 + '%';
+            sparkle.style.animationDelay = Math.random() * 2 + 's';
+            sparklesContainer.appendChild(sparkle);
+        }
+    </script>
 
 </body>
 </html>
