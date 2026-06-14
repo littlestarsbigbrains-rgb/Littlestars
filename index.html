@@ -200,6 +200,26 @@
             </div>
         </div>
 
+      <div class="card">
+            <h2>📅 Availability & Booking</h2>
+
+            <div class="spots-banner">
+                <h3>✨ Spots Available This Week! ✨</h3>
+                <p>Message me for current availability.</p>
+            </div>
+
+            <div class="notice">
+                <strong>June Availability:</strong>
+                I am available for the rest of June, except June 19 and June 21.
+            </div>
+
+            <div class="notice">
+                <strong>📅 Important Notice:</strong>
+                I am fully booked and will be CLOSED July 6th–10th.<br>
+                Thank you for your support! 💖
+            </div>
+        </div>
+
         <div class="card">
             <h2>📝 Book Childcare</h2>
             <p class="booking-note">Bookings start June 15, 2026. Please choose a booking date on or after June 15.</p>
@@ -248,73 +268,7 @@
             sparklesContainer.appendChild(sparkle);
         }
     </script>
-        // Initialize EmailJS
-        emailjs.init('bDbhoSlOKQarvvvWx');
-
-        // Create sparkle effect on header
-        const sparklesContainer = document.getElementById('sparkles-container');
-        for (let i = 0; i < 30; i++) {
-            const sparkle = document.createElement('div');
-            sparkle.className = 'sparkle';
-            sparkle.style.left = Math.random() * 100 + '%';
-            sparkle.style.top = Math.random() * 100 + '%';
-            sparkle.style.animationDelay = Math.random() * 2 + 's';
-            sparklesContainer.appendChild(sparkle);
-        }
-
-        // Handle form submission
-        const bookingForm = document.getElementById('bookingForm');
-        const successMessage = document.getElementById('successMessage');
-        const errorMessage = document.getElementById('errorMessage');
-
-        bookingForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            
-            const submitButton = bookingForm.querySelector('button');
-            submitButton.disabled = true;
-            submitButton.textContent = 'Sending...';
-            
-            // Collect form data
-            const templateParams = {
-                from_name: document.getElementById('parentName').value,
-                phone_number: document.getElementById('phoneNumber').value,
-                reply_to: document.getElementById('emailAddress').value,
-                emergency_contact: document.getElementById('emergencyContact').value,
-                child_name: document.getElementById('childName').value,
-                number_of_children: document.getElementById('numChildren').value,
-                child_age: document.getElementById('childAge').value,
-                message: `
-                    Allergies/Special Instructions: ${document.getElementById('allergies').value}
-                    Booking Date: ${document.getElementById('booking-date').value}
-                    Drop Off Time: ${document.getElementById('dropoff-time').value}
-                    Pick Up Time: ${document.getElementById('pickup-time').value}
-                    Overnight Booking: ${document.getElementById('overnight').checked ? 'Yes (+$10)' : 'No'}
-                    Deposit Method: ${document.getElementById('depositMethod').value}
-                `
-            };
-
-            try {
-                const response = await emailjs.send('service_littlestars', 'template_ca2rg3i', templateParams);
-                
-                if (response.status === 200) {
-                    successMessage.style.display = 'block';
-                    errorMessage.style.display = 'none';
-                    bookingForm.reset();
-                    setTimeout(() => {
-                        successMessage.style.display = 'none';
-                    }, 5000);
-                } else {
-                    throw new Error('Failed to send');
-                }
-            } catch (error) {
-                console.error('Error:', error);
-                errorMessage.style.display = 'block';
-                successMessage.style.display = 'none';
-            } finally {
-                submitButton.disabled = false;
-                submitButton.textContent = 'Submit Booking Request';
-            }
-        });
+       
     </script>
 
 </body>
