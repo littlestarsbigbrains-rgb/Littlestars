@@ -40,11 +40,8 @@
             50% { filter: brightness(1.1); background-position: 20px 25px, -25px 20px, 18px -18px, -20px -15px, 100% 50%; }
             100% { filter: brightness(1); background-position: 0 0, 0 0, 0 0, 0 0, 0% 50%; }
         }
-        @keyframes glitterDrift {
-            0% { background-position: 10px 20px, 40px 60px, 70px 30px; opacity: 0.45; }
-            50% { background-position: 60px 70px, 90px 110px, 120px 80px; opacity: 0.85; }
-            100% { background-position: 10px 20px, 40px 60px, 70px 30px; opacity: 0.45; }
-        }
+        @keyframes .sparkle { 
+        animation: sparkle 2s infinite;
         @keyframes twinkle {
             0%, 100% { opacity: 0.3; transform: scale(1); }
             50% { opacity: 1; transform: scale(1.2); }
@@ -115,10 +112,12 @@
         .closed { background:#FFB6C6; font-weight:bold; color:#cc0000; }
         .warning-box { background:linear-gradient(135deg, #ffe6e6, #ffcccc); border:3px solid #ff4da6; padding:20px; border-radius:15px; margin:20px 0; box-shadow: 0 0 15px rgba(255,77,166,0.2); }
         .warning-box h3 { color:#ff4da6; margin-bottom:10px; }
-        .warning-box p { color:#cc0000; font-weight:bold; font-size:1.1rem; margin:5px 0; } 
-        .spots-banner { background:linear-gradient(135deg, #fff7cc, #ffe6f2); border:3px solid gold; padding:20px; border-radius:15px; margin:20px 0; text-align:center; box-shadow:0 0 18px rgba(255,215,0,0.35); }
+       .spots-banner { background:linear-gradient(135deg, #fff7cc, #ffe6f2); border:3px solid gold; padding:20px; border-radius:15px; margin:20px 0; text-align:center; box-shadow:0 0 18px rgba(255,215,0,0.35); }
         .spots-banner h3 { color:#ff4da6; font-size:1.5rem; margin-bottom:8px; }
         .spots-banner p { font-weight:bold; color:#0088cc; font-size:1.1rem; }
+        .notice { background:linear-gradient(135deg, #fff0f7, #ffe6e6); border:3px solid #ff4da6; padding:20px; border-radius:15px; margin:20px 0; color:#cc0066; font-size:1.1rem; font-weight:bold; box-shadow:0 0 15px rgba(255,77,166,0.25); }
+        .notice strong { display:block; color:#ff1a8c; font-size:1.2rem; margin-bottom:8px; }
+        .booking-note { margin: 0 0 15px; padding: 12px 15px; border-radius: 12px; background: #fff7cc; color: #cc0066; font-weight: bold; border: 2px dashed gold; }
         .notice { background:linear-gradient(135deg, #fff0f7, #ffe6e6); border:3px solid #ff4da6; padding:20px; border-radius:15px; margin:20px 0; color:#cc0066; font-size:1.1rem; font-weight:bold; box-shadow:0 0 15px rgba(255,77,166,0.25); }
         .notice strong { display:block; color:#ff1a8c; font-size:1.2rem; margin-bottom:8px; }
         .booking-note { margin: 0 0 15px; padding: 12px 15px; border-radius: 12px; background: #fff7cc; color: #cc0066; font-weight: bold; border: 2px dashed gold; }
@@ -181,7 +180,7 @@
             <p><strong>🎁 5 Pins = FREE Gift</strong></p>
         </div>
 
-  <div class="card">
+ <div class="card">
             <h2>📅 Availability & Booking</h2>
 
             <div class="spots-banner">
@@ -238,15 +237,14 @@
         <p>Rochester, NY</p>
     </footer>
 
-   <script>
-        // Create sparkle effect on header
+  <script>
+        // Add static sparkle dots to the header. No movement animation is used.
         const sparklesContainer = document.getElementById('sparkles-container');
         for (let i = 0; i < 30; i++) {
             const sparkle = document.createElement('div');
             sparkle.className = 'sparkle';
             sparkle.style.left = Math.random() * 100 + '%';
             sparkle.style.top = Math.random() * 100 + '%';
-            sparkle.style.animationDelay = Math.random() * 2 + 's';
             sparklesContainer.appendChild(sparkle);
         }
     </script>
