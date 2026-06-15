@@ -21,6 +21,9 @@
             background-attachment: fixed;
             color:#333; 
             line-height:1.6;
+            display:flex;
+flex-direction:column;
+align-items:center;
         }
         body::before {
             content: '';
@@ -34,14 +37,29 @@
             opacity: 0.65;
             z-index: 0;
         }
-        body > * { position: relative; z-index: 1; }
+       body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: url('https://raw.githubusercontent.com/littlestarsbigbrains-rgb/Littlestars/main/logo.png') center center / min(70vw, 650px) no-repeat;
+    opacity: 0.13;
+    mix-blend-mode: soft-light;
+    z-index: 0;
+}
+body > * { position: relative; z-index: 1; width: min(100%, 1100px); }
         @keyframes sparkle {
             0% { filter: brightness(1); background-position: 0 0, 0 0, 0 0, 0 0, 0% 50%; }
             50% { filter: brightness(1.1); background-position: 20px 25px, -25px 20px, 18px -18px, -20px -15px, 100% 50%; }
             100% { filter: brightness(1); background-position: 0 0, 0 0, 0 0, 0 0, 0% 50%; }
         }
-        @keyframes .sparkle { 
-        animation: sparkle 2s infinite;
+       header { text-align:center; background:#fff; position: relative; margin:0 auto; }
+.logo-section { text-align:center; padding:20px; background:linear-gradient(135deg, #ff69b4, #ffd700, #87ceeb); position: relative; margin:0 auto; }
+.title { padding:30px 20px; text-align:center; position: relative; margin:0 auto; }
+section { max-width:1000px; margin:0 auto; padding:40px 20px; display:flex; flex-direction:column; align-items:center; }
+.card { width:min(100%, 900px); background:rgba(255,255,255,0.94); padding:30px; border-radius:20px; margin:0 auto 25px; box-shadow:0 5px 15px rgba(0,0,0,.08), 0 0 20px rgba(255,215,0,0.2); border: 2px solid rgba(255,215,0,0.3); position:relative; overflow:hidden; }
+footer { background:linear-gradient(135deg, #ff4da6, #ff1a8c); color:white; text-align:center; padding:30px; margin:20px auto 0; }
+@media(max-width:768px){ body > * { width:100%; } .title h1 { font-size:1.8rem; } section { padding:25px 12px; } .card { padding:22px 18px; } .availability-table { font-size:0.9rem; } }
         @keyframes twinkle {
             0%, 100% { opacity: 0.3; transform: scale(1); }
             50% { opacity: 1; transform: scale(1.2); }
@@ -236,13 +254,15 @@
             </form>
         </div>
 
-        <div class="card deposit-info">
-            <h2>💳 Reservation Deposit</h2>
-            <p><strong>$25 Deposit Required</strong></p>
-            <p>💲 Cash App: <strong>$Littlestarsbigbrains</strong></p>
-            <p>💚 Chime: <strong>$vaehvaeh18</strong></p>
-            <p><em>Bookings are not guaranteed until the deposit is received.</em></p>
-        </div>
+     <div class="card deposit-info">
+    <h2>💳 Reservation Deposit & Payments</h2>
+    <p><strong>$25 Deposit Required</strong></p>
+    <p><strong>Accepted for the total:</strong> Cash, PayPal, Chime, and Cash App.</p>
+    <p>💙 PayPal: <strong>NevaehMitchell530</strong></p>
+    <p>💲 Cash App: <strong>$Littlestarsbigbrains</strong></p>
+    <p>💚 Chime: <strong>$vaehvaeh18</strong></p>
+    <p><em>Bookings are not guaranteed until the deposit is received.</em></p>
+</div>
 
         <div class="card contact-card">
             <h2>📘 Contact</h2>
