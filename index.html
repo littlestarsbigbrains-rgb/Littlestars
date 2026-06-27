@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Little Stars Big Brains Childcare | Rochester, NY</title>
-
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body { overflow-x: hidden; }
@@ -59,11 +58,7 @@
       z-index: 1;
     }
 
-    body > * {
-      position: relative;
-      z-index: 2;
-      width: min(100%, 1100px);
-    }
+    body > * { position: relative; z-index: 2; width: min(100%, 1100px); }
 
     @keyframes sparkleBackground {
       0% { filter: brightness(1); background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0% 50%; }
@@ -71,15 +66,8 @@
       100% { filter: brightness(1); background-position: 0 0, 0 0, 0 0, 0 0, 0 0, 0% 50%; }
     }
 
-    @keyframes floatBubbles {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-22px); }
-    }
-
-    @keyframes twinkle {
-      0%, 100% { opacity: 0.35; transform: scale(1); }
-      50% { opacity: 1; transform: scale(1.35); }
-    }
+    @keyframes floatBubbles { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-22px); } }
+    @keyframes twinkle { 0%, 100% { opacity: 0.35; transform: scale(1); } 50% { opacity: 1; transform: scale(1.35); } }
 
     header {
       text-align: center;
@@ -91,53 +79,15 @@
       box-shadow: 0 8px 24px rgba(255,77,166,0.25);
     }
 
-    .sparkles {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      top: 0;
-      left: 0;
-      pointer-events: none;
-      z-index: 0;
-    }
+    .sparkles { position: absolute; width: 100%; height: 100%; overflow: hidden; top: 0; left: 0; pointer-events: none; z-index: 0; }
+    .sparkle { position: absolute; width: 12px; height: 12px; background: radial-gradient(circle, #fff, #ffd700, #ff69b4); border-radius: 50%; animation: twinkle 2s infinite; box-shadow: 0 0 12px rgba(255, 215, 0, 0.9); }
 
-    .sparkle {
-      position: absolute;
-      width: 12px;
-      height: 12px;
-      background: radial-gradient(circle, #fff, #ffd700, #ff69b4);
-      border-radius: 50%;
-      animation: twinkle 2s infinite;
-      box-shadow: 0 0 12px rgba(255, 215, 0, 0.9);
-    }
-
-    .title {
-      padding: 35px 20px;
-      text-align: center;
-      position: relative;
-      margin: 0 auto;
-      background: rgba(255,255,255,0.9);
-    }
-
-    .title h1 {
-      color: #ff1a8c;
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      text-shadow: 0 0 10px rgba(255,215,0,0.35);
-    }
-
+    .title { padding: 35px 20px; text-align: center; position: relative; margin: 0 auto; background: rgba(255,255,255,0.9); }
+    .title h1 { color: #ff1a8c; font-size: clamp(1.8rem, 5vw, 2.7rem); margin-bottom: 10px; text-shadow: 0 0 10px rgba(255,215,0,0.35); }
     .title p { font-size: 1.2rem; }
     .title .location { font-weight: bold; color: #0088cc; display: inline-block; margin-top: 5px; }
 
-    section {
-      max-width: 1000px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+    section { max-width: 1000px; margin: 0 auto; padding: 40px 20px; display: flex; flex-direction: column; align-items: center; }
 
     .card {
       width: min(100%, 900px);
@@ -146,10 +96,7 @@
       border-radius: 24px;
       margin: 0 auto 25px;
       border: 4px solid #ff4da6;
-      box-shadow:
-        0 5px 15px rgba(0,0,0,.08),
-        0 0 22px rgba(255,77,166,0.28),
-        inset 0 0 0 3px rgba(255,182,217,0.45);
+      box-shadow: 0 5px 15px rgba(0,0,0,.08), 0 0 22px rgba(255,77,166,0.28), inset 0 0 0 3px rgba(255,182,217,0.45);
       position: relative;
       overflow: hidden;
     }
@@ -159,33 +106,23 @@
       position: absolute;
       inset: 0;
       pointer-events: none;
-      background:
-        radial-gradient(circle at 12% 18%, rgba(255,215,0,0.25) 0 4px, transparent 6px),
-        radial-gradient(circle at 86% 24%, rgba(255,105,180,0.22) 0 6px, transparent 9px),
-        radial-gradient(circle at 45% 88%, rgba(135,206,235,0.25) 0 5px, transparent 8px);
+      background: radial-gradient(circle at 12% 18%, rgba(255,215,0,0.25) 0 4px, transparent 6px), radial-gradient(circle at 86% 24%, rgba(255,105,180,0.22) 0 6px, transparent 9px), radial-gradient(circle at 45% 88%, rgba(135,206,235,0.25) 0 5px, transparent 8px);
       opacity: 0.8;
     }
 
     .card > * { position: relative; z-index: 1; }
     .card h2 { color: #ff1a8c; margin-bottom: 12px; }
+    .card h3 { color: #7030a0; margin: 16px 0 8px; }
+    .card p { margin-bottom: 10px; }
+    .card ul { padding-left: 22px; margin: 10px 0; }
     .card li { margin-bottom: 8px; font-size: 1.05rem; }
 
-    .booking-form {
-      display: grid;
-      gap: 15px;
-      margin-top: 20px;
-    }
+    .two-column { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; width: 100%; }
+    .mini-box { background: rgba(255,247,252,0.9); border: 3px solid #ff9ccc; border-radius: 18px; padding: 16px; }
 
-    .booking-form label {
-      display: grid;
-      gap: 6px;
-      color: #cc0066;
-      font-weight: bold;
-    }
-
-    .booking-form input,
-    .booking-form textarea,
-    .booking-form select {
+    .booking-form { display: grid; gap: 15px; margin-top: 20px; }
+    .booking-form label { display: grid; gap: 6px; color: #cc0066; font-weight: bold; }
+    .booking-form input, .booking-form textarea, .booking-form select {
       padding: 14px;
       border-radius: 14px;
       border: 3px solid #ff4da6;
@@ -195,100 +132,141 @@
       box-shadow: 0 0 10px rgba(255,77,166,0.15);
       font-family: inherit;
     }
-
     .booking-form textarea { resize: vertical; min-height: 100px; }
+    .form-help { background: #fff7cc; border: 3px dashed #ff4da6; color: #cc0066; border-radius: 14px; padding: 12px 14px; font-weight: bold; }
 
-    .form-help {
-      background: #fff7cc;
-      border: 3px dashed #ff4da6;
-      color: #cc0066;
-      border-radius: 14px;
-      padding: 12px 14px;
-      font-weight: bold;
-    }
+    button { background: linear-gradient(135deg, #ff4da6, #ff1a8c); color: white; border: 4px solid #ffb6d9; padding: 15px; border-radius: 16px; cursor: pointer; font-size: 18px; font-weight: bold; transition: all 0.3s; margin-top: 10px; box-shadow: 0 4px 15px rgba(255,77,166,0.35); }
+    button:hover { transform: scale(1.05); box-shadow: 0 6px 22px rgba(255,77,166,0.55); }
 
-    button {
-      background: linear-gradient(135deg, #ff4da6, #ff1a8c);
-      color: white;
-      border: 4px solid #ffb6d9;
-      padding: 15px;
-      border-radius: 16px;
-      cursor: pointer;
-      font-size: 18px;
-      font-weight: bold;
-      transition: all 0.3s;
-      margin-top: 10px;
-      box-shadow: 0 4px 15px rgba(255,77,166,0.35);
-    }
-
-    button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 22px rgba(255,77,166,0.55);
-    }
-
-    .deposit-info {
-      background: linear-gradient(135deg, #fff5fb, #e6f9ff);
-      border: 4px solid #ff4da6;
-    }
-
+    .deposit-info { background: linear-gradient(135deg, #fff5fb, #e6f9ff); border: 4px solid #ff4da6; }
     .deposit-info p { margin-bottom: 8px; }
-    .contact-card a { color: #ff1a8c; text-decoration: none; font-weight: bold; }
-    .contact-card a:hover { text-decoration: underline; }
+    .contact-card a, .card a { color: #ff1a8c; text-decoration: none; font-weight: bold; }
+    .contact-card a:hover, .card a:hover { text-decoration: underline; }
 
-    .spots-banner {
-      background: linear-gradient(135deg, #fff7cc, #ffe6f2);
-      border: 4px solid #ff4da6;
-      padding: 20px;
-      border-radius: 18px;
-      margin: 20px 0;
-      text-align: center;
-      box-shadow: 0 0 18px rgba(255,77,166,0.25);
-    }
-
+    .spots-banner { background: linear-gradient(135deg, #fff7cc, #ffe6f2); border: 4px solid #ff4da6; padding: 20px; border-radius: 18px; margin: 20px 0; text-align: center; box-shadow: 0 0 18px rgba(255,77,166,0.25); }
     .spots-banner h3 { color: #ff1a8c; font-size: 1.5rem; margin-bottom: 8px; }
     .spots-banner p { font-weight: bold; color: #0088cc; font-size: 1.1rem; }
 
-    .notice {
-      background: linear-gradient(135deg, #fff0f7, #ffe6e6);
-      border: 4px solid #ff4da6;
-      padding: 20px;
-      border-radius: 18px;
-      margin: 20px 0;
-      color: #cc0066;
-      font-size: 1.1rem;
-      font-weight: bold;
-      box-shadow: 0 0 15px rgba(255,77,166,0.25);
-    }
+    .notice { background: linear-gradient(135deg, #fff0f7, #ffe6e6); border: 4px solid #ff4da6; padding: 20px; border-radius: 18px; margin: 20px 0; color: #cc0066; font-size: 1.1rem; font-weight: bold; box-shadow: 0 0 15px rgba(255,77,166,0.25); }
+    .notice strong { display: block; color: #ff1a8c; font-size: 1.2rem; margin-bottom: 8px; }
 
-    .notice strong {
-      display: block;
-      color: #ff1a8c;
-      font-size: 1.2rem;
-      margin-bottom: 8px;
-    }
+    .rate-table { width: 100%; border-collapse: collapse; overflow: hidden; border-radius: 16px; margin: 14px 0 22px; background: white; box-shadow: 0 0 12px rgba(255,77,166,0.18); }
+    .rate-table th, .rate-table td { padding: 13px; border: 2px solid #ffb6d9; text-align: left; }
+    .rate-table th { background: #ff4da6; color: white; }
+    .rate-table td:last-child { font-weight: bold; color: #ff1a8c; }
+    .price-highlight { display: inline-block; background: #ff4da6; color: white; border-radius: 14px; padding: 6px 12px; margin: 4px 0; font-weight: bold; }
 
-    footer {
-      background: linear-gradient(135deg, #ff4da6, #ff1a8c);
-      color: white;
-      text-align: center;
-      padding: 30px;
-      margin: 20px auto 0;
-      border: 5px solid #ffb6d9;
-      border-radius: 28px 28px 0 0;
-      box-shadow: 0 -5px 18px rgba(255,77,166,0.3);
-    }
-
+    footer { background: linear-gradient(135deg, #ff4da6, #ff1a8c); color: white; text-align: center; padding: 30px; margin: 20px auto 0; border: 5px solid #ffb6d9; border-radius: 28px 28px 0 0; box-shadow: 0 -5px 18px rgba(255,77,166,0.3); }
     footer p { margin-bottom: 5px; }
+    footer a { color: white; font-weight: bold; }
 
     @media (max-width: 768px) {
       body > * { width: 100%; }
-      .title h1 { font-size: 1.8rem; }
       section { padding: 25px 12px; }
       .card { padding: 22px 18px; }
+      .two-column { grid-template-columns: 1fr; }
+      .rate-table th, .rate-table td { padding: 10px; font-size: 0.95rem; }
     }
+
+
+    .calendar-title {
+      color: #ff1a8c;
+      text-align: center;
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+
+    .calendar-note {
+      text-align: center;
+      font-weight: bold;
+      color: #cc0066;
+      margin-bottom: 15px;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 8px;
+      margin-top: 18px;
+    }
+
+    .day-name,
+    .calendar-day {
+      border: 3px solid #ff9ed0;
+      border-radius: 14px;
+      text-align: center;
+      padding: 10px 6px;
+      background: #fff;
+      font-weight: bold;
+    }
+
+    .day-name {
+      background: #ff4da6;
+      color: #fff;
+    }
+
+    .calendar-day span {
+      font-size: 0.82rem;
+    }
+
+    .calendar-day.available {
+      background: #eafff1;
+      border-color: #55cc88;
+      color: #207544;
+    }
+
+    .calendar-day.booked {
+      background: #ffe1e1;
+      border-color: #ff0000;
+      color: #b00000;
+      box-shadow: 0 0 14px rgba(255,0,0,0.32);
+    }
+
+    .calendar-day.empty {
+      background: rgba(255,255,255,0.45);
+      border-style: dashed;
+      color: #aaa;
+    }
+
+    .calendar-legend {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .legend-pill {
+      border-radius: 999px;
+      padding: 8px 14px;
+      border: 3px solid #ff9ed0;
+      background: #fff;
+      font-weight: bold;
+    }
+
+    .legend-pill.available {
+      background: #eafff1;
+      color: #207544;
+    }
+
+    .legend-pill.booked {
+      background: #ffe1e1;
+      border-color: #ff0000;
+      color: #b00000;
+    }
+
+
+    @media (max-width: 640px) {
+      .calendar-grid { gap: 5px; }
+      .day-name,
+      .calendar-day {
+        font-size: 0.78rem;
+        padding: 8px 3px;
+      }
+    }
+
   </style>
 </head>
-
 <body>
   <header>
     <div class="sparkles" id="sparkles-container"></div>
@@ -303,7 +281,6 @@
     <div class="card">
       <h2>💖 Meet Nevaeh</h2>
       <p>Hi everyone! My name is Nevaeh, but you can call me Vaehh! I'm 18 years old and previously worked as a Teacher Assistant. Caring for children has been a huge part of my life for as long as I can remember.</p>
-      <br>
       <p>I truly believe every child deserves to feel safe, loved, encouraged, and important. My goal is to create a home-away-from-home where children can learn, play, build confidence, and make happy memories.</p>
       <ul>
         <li>🎨 Drawing & Painting</li>
@@ -331,76 +308,283 @@
     </div>
 
     <div class="card">
+      <h2>🛡️ Trust & Safety</h2>
+      <div class="two-column">
+        <div class="mini-box">
+          <h3>✅ Experience & Bio</h3>
+          <p>Care is provided by Nevaeh, a previous Teacher Assistant with childcare experience and a love for helping children feel safe, encouraged, and important.</p>
+          <p>Comforts include arts and crafts, learning activities, dance time, nature, animals, puppy play, and helping children build confidence.</p>
+        </div>
+        <div class="mini-box">
+          <h3>🧾 Vetting Information</h3>
+          <p>Background check, First Aid, and CPR information can be shared with families upon request. Any updated certification details can be confirmed before booking.</p>
+        </div>
+        <div class="mini-box">
+          <h3>⭐ Parent Reviews</h3>
+          <p>Parent reviews and feedback are welcome. Reviews may be shared with permission as Little Stars Big Brains grows.</p>
+        </div>
+        <div class="mini-box">
+          <h3>🏠 Helpful Care Options</h3>
+          <p>Homework help and light child-related help may be available by request. Please include needs in the booking form so they can be discussed before care is confirmed.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📅 Availability & Booking</h2>
+      <div class="spots-banner">
+        <h3>✨ Spots Available This Week! ✨</h3>
+        <p>Message me for current availability.</p>
+      </div>
+      <div class="notice">
+        <strong>🌸 June Availability:</strong>
+        June is available for the rest of the month, except <strong>Friday, June 26 is booked</strong>.
+      </div>
+      <div class="notice">
+        <strong>📌 Important Notice:</strong>
+        I am fully booked and will be CLOSED July 6th-10th.<br>
+        Thank you for your support!
+      </div>
+      <div class="notice">
+        <strong>🔴 July Availability Update:</strong>
+        I am available all July except July 6th-10th, which are marked red on the calendar.
+      </div>
+      <p><strong>Flexible booking options:</strong> one-time care, date-night care, recurring after-school care, all-day care, multi-day care, and overnight care may be requested.</p>
+      <p><strong>Availability calendar:</strong> This is an editable on-page calendar families can check before booking. Message on Facebook or email to confirm your date.</p>
+
+      <h3 class="calendar-title">🗓️ June Availability Calendar</h3>
+      <p class="calendar-note">This calendar is editable in the website code. Change a day from <strong>Available</strong> to <strong>Booked</strong> when needed.</p>
+
+      <div class="calendar-grid" aria-label="June availability calendar">
+        <div class="day-name">Sun</div>
+        <div class="day-name">Mon</div>
+        <div class="day-name">Tue</div>
+        <div class="day-name">Wed</div>
+        <div class="day-name">Thu</div>
+        <div class="day-name">Fri</div>
+        <div class="day-name">Sat</div>
+
+        <div class="calendar-day empty"></div>
+        <div class="calendar-day available">1<br><span>Available</span></div>
+        <div class="calendar-day available">2<br><span>Available</span></div>
+        <div class="calendar-day available">3<br><span>Available</span></div>
+        <div class="calendar-day available">4<br><span>Available</span></div>
+        <div class="calendar-day available">5<br><span>Available</span></div>
+        <div class="calendar-day available">6<br><span>Available</span></div>
+
+        <div class="calendar-day available">7<br><span>Available</span></div>
+        <div class="calendar-day available">8<br><span>Available</span></div>
+        <div class="calendar-day available">9<br><span>Available</span></div>
+        <div class="calendar-day available">10<br><span>Available</span></div>
+        <div class="calendar-day available">11<br><span>Available</span></div>
+        <div class="calendar-day available">12<br><span>Available</span></div>
+        <div class="calendar-day available">13<br><span>Available</span></div>
+
+        <div class="calendar-day available">14<br><span>Available</span></div>
+        <div class="calendar-day available">15<br><span>Available</span></div>
+        <div class="calendar-day available">16<br><span>Available</span></div>
+        <div class="calendar-day available">17<br><span>Available</span></div>
+        <div class="calendar-day available">18<br><span>Available</span></div>
+        <div class="calendar-day available">19<br><span>Available</span></div>
+        <div class="calendar-day available">20<br><span>Available</span></div>
+
+        <div class="calendar-day available">21<br><span>Available</span></div>
+        <div class="calendar-day available">22<br><span>Available</span></div>
+        <div class="calendar-day available">23<br><span>Available</span></div>
+        <div class="calendar-day available">24<br><span>Available</span></div>
+        <div class="calendar-day available">25<br><span>Available</span></div>
+        <div class="calendar-day booked">26<br><span>Booked</span></div>
+        <div class="calendar-day available">27<br><span>Available</span></div>
+
+        <div class="calendar-day available">28<br><span>Available</span></div>
+        <div class="calendar-day available">29<br><span>Available</span></div>
+        <div class="calendar-day available">30<br><span>Available</span></div>
+        <div class="calendar-day empty"></div>
+        <div class="calendar-day empty"></div>
+        <div class="calendar-day empty"></div>
+        <div class="calendar-day empty"></div>
+      </div>
+
+      <div class="calendar-legend">
+        <span class="legend-pill available">Available</span>
+        <span class="legend-pill booked">Booked</span>
+      </div>
+
+      <h3 class="calendar-title">🗓️ July Availability Calendar</h3>
+      <p class="calendar-note">I am available all July except July 6th-10th. July 27 is available.</p>
+
+      <div class="calendar-grid" aria-label="July availability calendar">
+        <div class="day-name">Sun</div>
+        <div class="day-name">Mon</div>
+        <div class="day-name">Tue</div>
+        <div class="day-name">Wed</div>
+        <div class="day-name">Thu</div>
+        <div class="day-name">Fri</div>
+        <div class="day-name">Sat</div>
+
+        <div class="calendar-day empty"></div>
+        <div class="calendar-day empty"></div>
+        <div class="calendar-day empty"></div>
+        <div class="calendar-day available">1<br><span>Available</span></div>
+        <div class="calendar-day available">2<br><span>Available</span></div>
+        <div class="calendar-day available">3<br><span>Available</span></div>
+        <div class="calendar-day available">4<br><span>Available</span></div>
+
+        <div class="calendar-day available">5<br><span>Available</span></div>
+        <div class="calendar-day booked">6<br><span>Closed</span></div>
+        <div class="calendar-day booked">7<br><span>Closed</span></div>
+        <div class="calendar-day booked">8<br><span>Closed</span></div>
+        <div class="calendar-day booked">9<br><span>Closed</span></div>
+        <div class="calendar-day booked">10<br><span>Closed</span></div>
+        <div class="calendar-day available">11<br><span>Available</span></div>
+
+        <div class="calendar-day available">12<br><span>Available</span></div>
+        <div class="calendar-day available">13<br><span>Available</span></div>
+        <div class="calendar-day available">14<br><span>Available</span></div>
+        <div class="calendar-day available">15<br><span>Available</span></div>
+        <div class="calendar-day available">16<br><span>Available</span></div>
+        <div class="calendar-day available">17<br><span>Available</span></div>
+        <div class="calendar-day available">18<br><span>Available</span></div>
+
+        <div class="calendar-day available">19<br><span>Available</span></div>
+        <div class="calendar-day available">20<br><span>Available</span></div>
+        <div class="calendar-day available">21<br><span>Available</span></div>
+        <div class="calendar-day available">22<br><span>Available</span></div>
+        <div class="calendar-day available">23<br><span>Available</span></div>
+        <div class="calendar-day available">24<br><span>Available</span></div>
+        <div class="calendar-day available">25<br><span>Available</span></div>
+
+        <div class="calendar-day available">26<br><span>Available</span></div>
+        <div class="calendar-day available">27<br><span>Available</span></div>
+        <div class="calendar-day available">28<br><span>Available</span></div>
+        <div class="calendar-day available">29<br><span>Available</span></div>
+        <div class="calendar-day available">30<br><span>Available</span></div>
+        <div class="calendar-day available">31<br><span>Available</span></div>
+        <div class="calendar-day empty"></div>
+      </div>
+
+      <div class="calendar-legend">
+        <span class="legend-pill available">Available</span>
+        <span class="legend-pill booked">Booked / Closed</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>📝 Book Childcare</h2>
+      <p class="form-help">Need more than 1 day or 3+ days? Fill in the start date, end date, and number of days needed.</p>
+      <form action="https://formsubmit.co/Littlestarsbigbrains@gmail.com" method="POST" class="booking-form">
+        <input type="hidden" name="_subject" value="New Little Stars Big Brains Booking Request">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
+
+        <input type="text" name="Parent Name" placeholder="Parent Name" required>
+        <input type="email" name="Email" placeholder="Email" required>
+        <input type="tel" name="Phone" placeholder="Phone Number">
+        <input type="text" name="Child Name" placeholder="Child Name" required>
+        <input type="text" name="Child Age" placeholder="Child Age(s)" required>
+
+        <label>📅 Start Date
+          <input type="date" name="Start Date" required>
+        </label>
+        <label>📅 End Date
+          <input type="date" name="End Date" required>
+        </label>
+        <label>🔢 Number of Days Needed
+          <input type="number" name="Number of Days Needed" min="1" placeholder="Example: 1, 2, 3, 4..." required>
+        </label>
+
+        <select name="Booking Type" required>
+          <option value="">Choose Booking Type</option>
+          <option>One-time care</option>
+          <option>Date night care</option>
+          <option>Recurring after-school care</option>
+          <option>All-day care</option>
+          <option>Multi-day care</option>
+          <option>Overnight care</option>
+        </select>
+
+        <textarea name="Days and Times Needed" placeholder="Tell me which days/times you need care. Example: Monday, Tuesday, Wednesday from 8 AM - 4 PM" required></textarea>
+        <textarea name="Allergies or Medical Notes" placeholder="Allergies, medical notes, or special instructions"></textarea>
+        <textarea name="Emergency Contact" placeholder="Emergency contact name and phone number" required></textarea>
+        <textarea name="Care Instructions" placeholder="Care instructions, meals, naps, homework help, comfort items, or anything I should know"></textarea>
+        <textarea name="Additional Information" placeholder="Additional Information"></textarea>
+        <button type="submit">💌 Submit Booking</button>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>💵 Pricing & Rates</h2>
+      <p><strong>Faithful pricing from the rate flyer:</strong></p>
+      <p>🌟 <strong>Daily Childcare Rates</strong> — Full Day (Up to 8 Hours)</p>
+      <p><span class="price-highlight">1 Child: $40</span> <span class="price-highlight">2 Children: $75</span> <span class="price-highlight">3 Children: $105</span> <span class="price-highlight">4 Children: $130</span> <span class="price-highlight">5 Children: $150</span></p>
+      <p>🌙 <strong>Overnight Childcare</strong></p>
+      <p><span class="price-highlight">1 Child: $60/night</span> <span class="price-highlight">2 Children: $110/night</span> <span class="price-highlight">3 Children: $150/night</span> <span class="price-highlight">4 Children: $190/night</span> <span class="price-highlight">5 Children: $225/night</span></p>
+
+      <h3>🌞 Daily Childcare Rates — Full Day, Up to 8 Hours</h3>
+      <table class="rate-table">
+        <thead><tr><th>Children</th><th>Price</th></tr></thead>
+        <tbody>
+          <tr><td>1 Child</td><td>$40</td></tr>
+          <tr><td>2 Children</td><td>$75</td></tr>
+          <tr><td>3 Children</td><td>$105</td></tr>
+          <tr><td>4 Children</td><td>$130</td></tr>
+          <tr><td>5 Children</td><td>$150</td></tr>
+        </tbody>
+      </table>
+
+      <h3>🌙 Overnight Childcare Rates</h3>
+      <table class="rate-table">
+        <thead><tr><th>Children</th><th>Price</th></tr></thead>
+        <tbody>
+          <tr><td>1 Child</td><td>$60/night</td></tr>
+          <tr><td>2 Children</td><td>$110/night</td></tr>
+          <tr><td>3 Children</td><td>$150/night</td></tr>
+          <tr><td>4 Children</td><td>$190/night</td></tr>
+          <tr><td>5 Children</td><td>$225/night</td></tr>
+        </tbody>
+      </table>
+
+      <div class="notice">
+        <strong>✨ Overnight Includes:</strong>
+        Dinner, bedtime routine, safe sleep environment, and breakfast for morning pickup.
+      </div>
+      <p>🚗 <strong>Transportation Available:</strong> Need help getting your little star to daycare? Message on Facebook for transportation details.</p>
+    </div>
+
+    <div class="card deposit-info">
+      <h2>💳 Payments & Policies</h2>
+      <p><strong>💰 25% deposit required to hold your spot.</strong></p>
+      <p><strong>Payments due at drop-off.</strong></p>
+      <p><strong>Accepted for the total:</strong> Cash, PayPal, Chime, and Cash App.</p>
+      <p>💙 PayPal: <strong>NevaehMitchell530</strong></p>
+      <p>💵 Cash App: <strong>$Littlestarsbigbrains</strong></p>
+      <p>💚 Chime: <strong>$vaehvaeh18</strong></p>
+      <p>⏰ Last-minute care may be available when spots are open.</p>
+      <p>📸 Daily updates and photos are available.</p>
+      <p><strong>Cancellation policy:</strong> Please message as soon as possible for cancellations or schedule changes. Any cancellation details can be discussed when booking is confirmed.</p>
+      <p><em>Bookings are not guaranteed until the deposit is received and the spot is confirmed.</em></p>
+    </div>
+
+    <div class="card">
+      <h2>💬 Communication & Safety</h2>
+      <ul>
+        <li>📲 Families can message before booking is finalized through Facebook or email.</li>
+        <li>📝 Care instructions, allergies, emergency contacts, and schedule notes are collected in the booking form.</li>
+        <li>📧 Booking confirmations and reminders are handled by message or email. Automated in-app reminders are not currently built into this website.</li>
+        <li>🚨 Emergency contact information is requested before care so important details are easy to access if needed.</li>
+        <li>🛟 A built-in panic button is not part of this website, but emergency contact details and safety notes are collected before care begins.</li>
+      </ul>
+    </div>
+
+    <div class="card">
       <h2>🏅 Reward Pin Program</h2>
       <p>Earn pins for kindness, helping others, participation, positive behavior, and milestones.</p>
       <p><strong>🎁 5 Pins = FREE Gift</strong></p>
     </div>
 
-  <div class="card">
-  <h2>📅 Availability & Booking</h2>
-  <div class="spots-banner">
-    <h3>✨ Spots Available This Week! ✨</h3>
-    <p>Message me for current availability.</p>
-  </div>
-  <div class="notice">
-    <strong>🌸 June Availability:</strong>
-    June is available for the rest of the month, except <strong>Friday, June 26 is booked</strong>.
-  </div>
-  <div class="notice">
-    <strong>📌 Important Notice:</strong>
-    I am fully booked and will be CLOSED July 6th-10th.<br>
-    Thank you for your support!
-  </div>
-</div>
-    
-    <div class="card">
-  
-<div class="card">
-  <h2>📝 Book Childcare</h2>
-  <p class="form-help">Need more than 1 day or 3+ days? Fill in the start date, end date, and number of days needed.</p>
-
-  <form action="https://formsubmit.co/Littlestarsbigbrains@gmail.com" method="POST" class="booking-form">
-    <input type="hidden" name="_subject" value="New Little Stars Big Brains Booking Request">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_template" value="table">
-
-    <input type="text" name="Parent Name" placeholder="Parent Name" required>
-    <input type="email" name="Email" placeholder="Email" required>
-    <input type="text" name="Child Name" placeholder="Child Name" required>
-
-    <label>📅 Start Date
-      <input type="date" name="Start Date" required>
-    </label>
-
-    <label>📅 End Date
-      <input type="date" name="End Date" required>
-    </label>
-
-    <label>🔢 Number of Days Needed
-      <input type="number" name="Number of Days Needed" min="1" placeholder="Example: 1, 2, 3, 4..." required>
-    </label>
-
-    <textarea name="Days and Times Needed" placeholder="Tell me which days/times you need care. Example: Monday, Tuesday, Wednesday from 8 AM - 4 PM"></textarea>
-    <textarea name="Additional Information" placeholder="Additional Information"></textarea>
-
-    <button type="submit">💌 Submit Booking</button>
-  </form>
-</div>
-</div>
-
-    <div class="card deposit-info">
-      <h2>💳 Reservation Deposit & Payments</h2>
-      <p><strong>💰 $25 Deposit Required</strong></p>
-      <p><strong>Accepted for the total:</strong> Cash, PayPal, Chime, and Cash App.</p>
-      <p>💙 PayPal: <strong>NevaehMitchell530</strong></p>
-      <p>💵 Cash App: <strong>$Littlestarsbigbrains</strong></p>
-      <p>💚 Chime: <strong>$vaehvaeh18</strong></p>
-      <p><em>Bookings are not guaranteed until the deposit is received.</em></p>
-    </div>
-
     <div class="card contact-card">
       <h2>📞 Contact</h2>
-      <p>Facebook: <a href="#" target="_blank">Nevaeh Stars</a></p>
+      <p>Facebook: <a href="https://www.facebook.com/profile.php?id=61590405221481" target="_blank" rel="noopener">Nevaeh Stars</a></p>
       <p>Email: <a href="mailto:Littlestarsbigbrains@gmail.com">Littlestarsbigbrains@gmail.com</a></p>
     </div>
   </section>
@@ -409,6 +593,7 @@
     <p>🌟 Little Stars Big Brains Childcare 🌟</p>
     <p>🧠 Where Little Minds Learn, Play, Grow & Shine! ✨</p>
     <p>📍 Rochester, NY</p>
+    <p><a href="https://www.facebook.com/profile.php?id=61590405221481" target="_blank" rel="noopener">Find us on Facebook: Nevaeh Stars</a></p>
   </footer>
 
   <script>
@@ -425,5 +610,9 @@
       sparklesContainer.appendChild(sparkle);
     }
   </script>
+
+
+
 </body>
 </html>
+
