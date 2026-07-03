@@ -156,6 +156,56 @@
     .rate-table td:last-child { font-weight: bold; color: #ff1a8c; }
     .price-highlight { display: inline-block; background: #ff4da6; color: white; border-radius: 14px; padding: 6px 12px; margin: 4px 0; font-weight: bold; }
 
+
+
+    .payment-options {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin: 18px 0;
+    }
+
+    .payment-button {
+      display: block;
+      text-align: center;
+      color: white !important;
+      text-decoration: none !important;
+      border-radius: 18px;
+      padding: 16px 12px;
+      font-size: 1.05rem;
+      font-weight: bold;
+      border: 4px solid rgba(255,255,255,0.75);
+      box-shadow: 0 5px 16px rgba(0,0,0,0.14);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .payment-button:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+      text-decoration: none !important;
+    }
+
+    .payment-button span {
+      display: block;
+      margin-top: 6px;
+      font-size: 0.95rem;
+      word-break: break-word;
+    }
+
+    .payment-button.cashapp { background: linear-gradient(135deg, #00c244, #00a838); }
+    .payment-button.paypal { background: linear-gradient(135deg, #0070ba, #003087); }
+    .payment-button.chime { background: linear-gradient(135deg, #00a86b, #057a55); }
+
+    .payment-note {
+      background: #fff7cc;
+      border: 3px dashed #ff4da6;
+      color: #8a0046;
+      border-radius: 14px;
+      padding: 12px 14px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
     footer { background: linear-gradient(135deg, #ff4da6, #ff1a8c); color: white; text-align: center; padding: 30px; margin: 20px auto 0; border: 5px solid #ffb6d9; border-radius: 28px 28px 0 0; box-shadow: 0 -5px 18px rgba(255,77,166,0.3); }
     footer p { margin-bottom: 5px; }
     footer a { color: white; font-weight: bold; }
@@ -165,6 +215,7 @@
       section { padding: 25px 12px; }
       .card { padding: 22px 18px; }
       .two-column { grid-template-columns: 1fr; }
+      .payment-options { grid-template-columns: 1fr; }
       .rate-table th, .rate-table td { padding: 10px; font-size: 0.95rem; }
     }
 
@@ -336,82 +387,20 @@
         <h3>✨ Spots Available This Week! ✨</h3>
         <p>Message me for current availability.</p>
       </div>
-      <div class="notice">
-        <strong>🌸 June Availability:</strong>
-        June is available for the rest of the month, except <strong>Friday, June 26, Saturday, June 27, and Sunday, June 28 are booked</strong>.
-      </div>
-      <div class="notice">
+<div class="notice">
         <strong>📌 Important Notice:</strong>
         I am fully booked and will be CLOSED July 6th-10th.<br>
         Thank you for your support!
       </div>
       <div class="notice">
         <strong>🔴 July Availability Update:</strong>
-        I am available all July except July 6th-10th, which are marked red on the calendar.
+        I am available most of July. July 3rd is booked, and July 6th-10th are closed/booked on the calendar.
       </div>
       <p><strong>Flexible booking options:</strong> one-time care, date-night care, recurring after-school care, all-day care, multi-day care, and overnight care may be requested.</p>
       <p><strong>Availability calendar:</strong> This is an editable on-page calendar families can check before booking. Message on Facebook or email to confirm your date.</p>
 
-      <h3 class="calendar-title">🗓️ June Availability Calendar</h3>
-      <p class="calendar-note">This calendar is editable in the website code. Change a day from <strong>Available</strong> to <strong>Booked</strong> when needed.</p>
-
-      <div class="calendar-grid" aria-label="June availability calendar">
-        <div class="day-name">Sun</div>
-        <div class="day-name">Mon</div>
-        <div class="day-name">Tue</div>
-        <div class="day-name">Wed</div>
-        <div class="day-name">Thu</div>
-        <div class="day-name">Fri</div>
-        <div class="day-name">Sat</div>
-
-        <div class="calendar-day empty"></div>
-        <div class="calendar-day available">1<br><span>Available</span></div>
-        <div class="calendar-day available">2<br><span>Available</span></div>
-        <div class="calendar-day available">3<br><span>Available</span></div>
-        <div class="calendar-day available">4<br><span>Available</span></div>
-        <div class="calendar-day available">5<br><span>Available</span></div>
-        <div class="calendar-day available">6<br><span>Available</span></div>
-
-        <div class="calendar-day available">7<br><span>Available</span></div>
-        <div class="calendar-day available">8<br><span>Available</span></div>
-        <div class="calendar-day available">9<br><span>Available</span></div>
-        <div class="calendar-day available">10<br><span>Available</span></div>
-        <div class="calendar-day available">11<br><span>Available</span></div>
-        <div class="calendar-day available">12<br><span>Available</span></div>
-        <div class="calendar-day available">13<br><span>Available</span></div>
-
-        <div class="calendar-day available">14<br><span>Available</span></div>
-        <div class="calendar-day available">15<br><span>Available</span></div>
-        <div class="calendar-day available">16<br><span>Available</span></div>
-        <div class="calendar-day available">17<br><span>Available</span></div>
-        <div class="calendar-day available">18<br><span>Available</span></div>
-        <div class="calendar-day available">19<br><span>Available</span></div>
-        <div class="calendar-day available">20<br><span>Available</span></div>
-
-        <div class="calendar-day available">21<br><span>Available</span></div>
-        <div class="calendar-day available">22<br><span>Available</span></div>
-        <div class="calendar-day available">23<br><span>Available</span></div>
-        <div class="calendar-day available">24<br><span>Available</span></div>
-        <div class="calendar-day available">25<br><span>Available</span></div>
-        <div class="calendar-day booked">26<br><span>Booked</span></div>
-        <div class="calendar-day booked">27<br><span>Booked</span></div>
-
-        <div class="calendar-day booked">28<br><span>Booked</span></div>
-        <div class="calendar-day available">29<br><span>Available</span></div>
-        <div class="calendar-day available">30<br><span>Available</span></div>
-        <div class="calendar-day empty"></div>
-        <div class="calendar-day empty"></div>
-        <div class="calendar-day empty"></div>
-        <div class="calendar-day empty"></div>
-      </div>
-
-      <div class="calendar-legend">
-        <span class="legend-pill available">Available</span>
-        <span class="legend-pill booked">Booked</span>
-      </div>
-
       <h3 class="calendar-title">🗓️ July Availability Calendar</h3>
-      <p class="calendar-note">I am available all July except July 6th-10th. July 27 is available.</p>
+      <p class="calendar-note">July 3rd is booked. July 6th-10th are closed/booked. Please message to confirm all dates before paying a deposit.</p>
 
       <div class="calendar-grid" aria-label="July availability calendar">
         <div class="day-name">Sun</div>
@@ -427,7 +416,7 @@
         <div class="calendar-day empty"></div>
         <div class="calendar-day available">1<br><span>Available</span></div>
         <div class="calendar-day available">2<br><span>Available</span></div>
-        <div class="calendar-day available">3<br><span>Available</span></div>
+        <div class="calendar-day booked">3<br><span>Booked</span></div>
         <div class="calendar-day available">4<br><span>Available</span></div>
 
         <div class="calendar-day available">5<br><span>Available</span></div>
@@ -460,6 +449,73 @@
         <div class="calendar-day available">29<br><span>Available</span></div>
         <div class="calendar-day available">30<br><span>Available</span></div>
         <div class="calendar-day available">31<br><span>Available</span></div>
+        <div class="calendar-day empty"></div>
+      </div>
+
+      <div class="calendar-legend">
+        <span class="legend-pill available">Available</span>
+        <span class="legend-pill booked">Booked / Closed</span>
+      </div>
+
+
+      <h3 class="calendar-title">🗓️ August Availability Calendar</h3>
+      <p class="calendar-note">August 2026 is open for requests. Please message to confirm your date before paying a deposit.</p>
+
+      <div class="calendar-grid" aria-label="August availability calendar">
+        <div class="day-name">Sun</div>
+        <div class="day-name">Mon</div>
+        <div class="day-name">Tue</div>
+        <div class="day-name">Wed</div>
+        <div class="day-name">Thu</div>
+        <div class="day-name">Fri</div>
+        <div class="day-name">Sat</div>
+
+        <div class="calendar-day empty"></div>
+        <div class="calendar-day empty"></div>
+        <div class="calendar-day empty"></div>
+        <div class="calendar-day empty"></div>
+        <div class="calendar-day empty"></div>
+        <div class="calendar-day empty"></div>
+        <div class="calendar-day available">1<br><span>Available</span></div>
+
+        <div class="calendar-day available">2<br><span>Available</span></div>
+        <div class="calendar-day available">3<br><span>Available</span></div>
+        <div class="calendar-day available">4<br><span>Available</span></div>
+        <div class="calendar-day available">5<br><span>Available</span></div>
+        <div class="calendar-day available">6<br><span>Available</span></div>
+        <div class="calendar-day available">7<br><span>Available</span></div>
+        <div class="calendar-day available">8<br><span>Available</span></div>
+
+        <div class="calendar-day available">9<br><span>Available</span></div>
+        <div class="calendar-day available">10<br><span>Available</span></div>
+        <div class="calendar-day available">11<br><span>Available</span></div>
+        <div class="calendar-day available">12<br><span>Available</span></div>
+        <div class="calendar-day available">13<br><span>Available</span></div>
+        <div class="calendar-day available">14<br><span>Available</span></div>
+        <div class="calendar-day available">15<br><span>Available</span></div>
+
+        <div class="calendar-day available">16<br><span>Available</span></div>
+        <div class="calendar-day available">17<br><span>Available</span></div>
+        <div class="calendar-day available">18<br><span>Available</span></div>
+        <div class="calendar-day available">19<br><span>Available</span></div>
+        <div class="calendar-day available">20<br><span>Available</span></div>
+        <div class="calendar-day available">21<br><span>Available</span></div>
+        <div class="calendar-day available">22<br><span>Available</span></div>
+
+        <div class="calendar-day available">23<br><span>Available</span></div>
+        <div class="calendar-day available">24<br><span>Available</span></div>
+        <div class="calendar-day available">25<br><span>Available</span></div>
+        <div class="calendar-day available">26<br><span>Available</span></div>
+        <div class="calendar-day available">27<br><span>Available</span></div>
+        <div class="calendar-day available">28<br><span>Available</span></div>
+        <div class="calendar-day available">29<br><span>Available</span></div>
+
+        <div class="calendar-day available">30<br><span>Available</span></div>
+        <div class="calendar-day available">31<br><span>Available</span></div>
+        <div class="calendar-day empty"></div>
+        <div class="calendar-day empty"></div>
+        <div class="calendar-day empty"></div>
+        <div class="calendar-day empty"></div>
         <div class="calendar-day empty"></div>
       </div>
 
@@ -556,9 +612,24 @@
       <p><strong>💰 25% deposit required to hold your spot.</strong></p>
       <p><strong>Payments due at drop-off.</strong></p>
       <p><strong>Accepted for the total:</strong> Cash, PayPal, Chime, and Cash App.</p>
-      <p>💙 PayPal: <strong>NevaehMitchell530</strong></p>
-      <p>💵 Cash App: <strong>$Littlestarsbigbrains</strong></p>
-      <p>💚 Chime: <strong>$vaehvaeh18</strong></p>
+      <p><strong>Choose how to send your deposit:</strong></p>
+      <div class="payment-options" aria-label="Payment options">
+        <a class="payment-button cashapp" href="https://cash.app/$Littlestarsbigbrains" target="_blank" rel="noopener">
+          Pay with Cash App
+          <span>$Littlestarsbigbrains</span>
+        </a>
+        <!-- Replace this PayPal link if your correct public PayPal.me or checkout link is different. Do not use your private PayPal account-summary link here. -->
+        <a class="payment-button paypal" href="https://www.paypal.me/NevaehMitchell530" target="_blank" rel="noopener">
+          Pay with PayPal
+          <span>NevaehMitchell530</span>
+        </a>
+        <!-- Chime direct public pay links can vary. If this does not open the right Chime flow, keep the handle visible and replace the href with your exact public Chime payment link. -->
+        <a class="payment-button chime" href="https://www.chime.com/pay-anyone/" target="_blank" rel="noopener">
+          Pay with Chime
+          <span>$vaehvaeh18</span>
+        </a>
+      </div>
+      <p class="payment-note">Please send the 25% deposit only after your date is confirmed. If a button does not open the app correctly, search the handle shown above inside that payment app.</p>
       <p>⏰ Last-minute care may be available when spots are open.</p>
       <p>📸 Daily updates and photos are available.</p>
       <p><strong>Cancellation policy:</strong> Please message as soon as possible for cancellations or schedule changes. Any cancellation details can be discussed when booking is confirmed.</p>
@@ -611,9 +682,19 @@
     }
   </script>
 
-
+  <script>
+    const send = () => parent.postMessage(
+      {
+        type: 'web_page_metrics',
+        height: document.body.scrollHeight,
+        width: document.body.scrollWidth,
+        kind: 'interactive',
+      },
+      '*'
+    );
+    window.addEventListener('load', send);
+    new ResizeObserver(send).observe(document.documentElement);
+  </script>
 
 </body>
 </html>
-
-
